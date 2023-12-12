@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+  <link rel="stylesheet" href="static/css/adminhomepage.css">
+
+  <style>
+    body {
+      background-image: url("static/assets/img/home-bg.jpg");
+      background-size: cover;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <!-- Hamburger menu icon -->
+  <div class="menu-icon">
+    <div class="menu-icon__line"></div>
+    <div class="menu-icon__line"></div>
+    <div class="menu-icon__line"></div>
+  </div>
+
+  <!-- Menu options -->
+  <div class="menu-options">
+    <a href="/adminindex">Home</a>
+    <a href="/regraph">Generate Graph</a>
+    <a href="#">User list</a>
+    <a href="/adminlogout">Logout</a>
+  </div>
+
+  <h2>Welcome {{username}}!</h2>
+	
+  <table> 
+    <caption> User List</caption>
+   <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email ID</th>
+            <th>User Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for data in table %}
+        <tr>
+            <td>{{ data.id }}</td>
+            <td>{{ data.firstName }}</td>
+            <td>{{ data.lastName }}</td>
+            <td>{{ data.email }}</td>
+            <td>{{ data.username }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+
+  <script>
+    // Toggle menu options when menu icon is clicked
+    const menuIcon = document.querySelector('.menu-icon');
+    const menuOptions = document.querySelector('.menu-options');
+
+    menuIcon.addEventListener('click', function () {
+      menuIcon.classList.toggle('active');
+    });
+  </script>
+</body>
+
+</html>

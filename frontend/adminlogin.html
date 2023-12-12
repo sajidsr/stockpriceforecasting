@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="static/css/login.css">
+    <style>
+        body {
+          background-image: url("static/assets/img/home-bg.jpg");
+          background-size: cover;
+        }
+      </style>
+</head>
+
+<body>
+<!-- Hamburger menu icon -->
+<div class="menu-icon">
+  <div class="menu-icon__line"></div>
+  <div class="menu-icon__line"></div>
+  <div class="menu-icon__line"></div>
+</div>
+
+<!-- Menu options -->
+<div class="menu-options">
+  <a href="/login">Client Area</a>
+  <a href="/adminlogin">Admin Area</a>
+</div>
+
+<script>
+  // Toggle menu options when menu icon is clicked
+  const menuIcon = document.querySelector('.menu-icon');
+  const menuOptions = document.querySelector('.menu-options');
+
+  menuIcon.addEventListener('click', function () {
+    menuIcon.classList.toggle('active');
+  });
+</script>
+    <form method="POST" action="/adminlogin">
+        <p>Admin Login</p>
+        <input type="text" name="username" class="form-control" placeholder="Username">
+        <input type="password" name="password" class="form-control" placeholder="Password">
+        <p>Not Registered? <a href="/adminregister"> Click Here</a></p>
+        <button type="submit">Login</button>
+    </form>
+</body>
+
+</html>
